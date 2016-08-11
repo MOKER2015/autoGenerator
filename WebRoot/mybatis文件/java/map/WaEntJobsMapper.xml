@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.WaEntJobsMapper" >
+  <resultMap id="BaseResultMap" type="model.WaEntJobs" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="JOB_ID" property="jobId" jdbcType="VARCHAR" />
+    <result column="ENT_ID" property="entId" jdbcType="VARCHAR" />
+    <result column="ENT_NAME" property="entName" jdbcType="VARCHAR" />
+    <result column="DEPT_ID" property="deptId" jdbcType="VARCHAR" />
+    <result column="DEPT_NAME" property="deptName" jdbcType="VARCHAR" />
+    <result column="JOB_NAME" property="jobName" jdbcType="VARCHAR" />
+    <result column="REQUIRED_NUM" property="requiredNum" jdbcType="INTEGER" />
+    <result column="CAL" property="cal" jdbcType="VARCHAR" />
+    <result column="CAL_AUDIT_STATUS" property="calAuditStatus" jdbcType="INTEGER" />
+    <result column="MIN_SALARY" property="minSalary" jdbcType="INTEGER" />
+    <result column="MAX_SALARY" property="maxSalary" jdbcType="INTEGER" />
+    <result column="IS_NEGOTIATE" property="isNegotiate" jdbcType="INTEGER" />
+    <result column="JOB_DESC" property="jobDesc" jdbcType="VARCHAR" />
+    <result column="JOB_COND" property="jobCond" jdbcType="VARCHAR" />
+    <result column="BENEFITS" property="benefits" jdbcType="VARCHAR" />
+    <result column="DEG_ID" property="degId" jdbcType="INTEGER" />
+    <result column="DEG_NAME" property="degName" jdbcType="VARCHAR" />
+    <result column="DEG_ABOVE" property="degAbove" jdbcType="INTEGER" />
+    <result column="EXP_ID" property="expId" jdbcType="INTEGER" />
+    <result column="EXP_YEARS" property="expYears" jdbcType="VARCHAR" />
+    <result column="EXP_ABOVE" property="expAbove" jdbcType="INTEGER" />
+    <result column="GENDER" property="gender" jdbcType="INTEGER" />
+    <result column="MIN_AGE" property="minAge" jdbcType="INTEGER" />
+    <result column="MAX_AGE" property="maxAge" jdbcType="INTEGER" />
+    <result column="DRIVER_SKILL_ID" property="driverSkillId" jdbcType="INTEGER" />
+    <result column="DRIVER_SKILL_LEVEL" property="driverSkillLevel" jdbcType="VARCHAR" />
+    <result column="LANG_SKILL_NAME" property="langSkillName" jdbcType="VARCHAR" />
+    <result column="LANG_SKILL_ID" property="langSkillId" jdbcType="VARCHAR" />
+    <result column="CONTACT" property="contact" jdbcType="VARCHAR" />
+    <result column="IV_ADDR" property="ivAddr" jdbcType="VARCHAR" />
+    <result column="JOB_EMAIL" property="jobEmail" jdbcType="VARCHAR" />
+    <result column="FAX" property="fax" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="ZIPCODE" property="zipcode" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="WORK_TYPE_ID" property="workTypeId" jdbcType="INTEGER" />
+    <result column="WORK_TYPE_NAME" property="workTypeName" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="VARCHAR" />
+    <result column="END_DATE" property="endDate" jdbcType="VARCHAR" />
+    <result column="PUBLISH_DATE" property="publishDate" jdbcType="VARCHAR" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="VARCHAR" />
+    <result column="PAUSE_TIME" property="pauseTime" jdbcType="VARCHAR" />
+    <result column="ARCHIVED_TIME" property="archivedTime" jdbcType="VARCHAR" />
+    <result column="IS_DEL" property="isDel" jdbcType="INTEGER" />
+    <result column="DEL_TIME" property="delTime" jdbcType="VARCHAR" />
+    <result column="REF_TIME" property="refTime" jdbcType="VARCHAR" />
+    <result column="AUTO_REF_TIME" property="autoRefTime" jdbcType="VARCHAR" />
+    <result column="APP_TIME" property="appTime" jdbcType="VARCHAR" />
+    <result column="CLASSIFY" property="classify" jdbcType="INTEGER" />
+    <result column="AUDIT_STATUS" property="auditStatus" jdbcType="INTEGER" />
+    <result column="LOOKED" property="looked" jdbcType="INTEGER" />
+    <result column="BROWSE" property="browse" jdbcType="INTEGER" />
+    <result column="IS_LOCAL" property="isLocal" jdbcType="INTEGER" />
+    <result column="IS_AUTO_REP" property="isAutoRep" jdbcType="INTEGER" />
+    <result column="IS_SEND_APP" property="isSendApp" jdbcType="INTEGER" />
+    <result column="APP_EMAIL" property="appEmail" jdbcType="VARCHAR" />
+    <result column="IS_SEND_CE" property="isSendCe" jdbcType="INTEGER" />
+    <result column="CS_EMAIL" property="csEmail" jdbcType="VARCHAR" />
+    <result column="IS_SEND_SYS" property="isSendSys" jdbcType="INTEGER" />
+    <result column="SYS_EMAIL" property="sysEmail" jdbcType="VARCHAR" />
+    <result column="AUTO_RECOMM" property="autoRecomm" jdbcType="INTEGER" />
+    <result column="JOB_SORT" property="jobSort" jdbcType="INTEGER" />
+    <result column="REP_LIMIT" property="repLimit" jdbcType="INTEGER" />
+    <result column="REF_NUMS" property="refNums" jdbcType="INTEGER" />
+    <result column="END_REF_TIME" property="endRefTime" jdbcType="VARCHAR" />
+    <result column="CE_REF_TIME" property="ceRefTime" jdbcType="VARCHAR" />
+    <result column="CS_REF_NUMS" property="csRefNums" jdbcType="INTEGER" />
+    <result column="COMM_NUMS" property="commNums" jdbcType="INTEGER" />
+    <result column="COMM_UNLOOK" property="commUnlook" jdbcType="INTEGER" />
+    <result column="RESUMES" property="resumes" jdbcType="INTEGER" />
+    <result column="UNLOOK_RES" property="unlookRes" jdbcType="INTEGER" />
+    <result column="DEL_APPCV_NUM" property="delAppcvNum" jdbcType="INTEGER" />
+    <result column="IS_ACCEPT_CVS" property="isAcceptCvs" jdbcType="INTEGER" />
+    <result column="MEDAL_VALUE" property="medalValue" jdbcType="INTEGER" />
+    <result column="MEDAL_BEGIN" property="medalBegin" jdbcType="VARCHAR" />
+    <result column="MEDAL_END" property="medalEnd" jdbcType="VARCHAR" />
+    <result column="DRAFT_STATU" property="draftStatu" jdbcType="INTEGER" />
+    <result column="ARCHIVED_STATU" property="archivedStatu" jdbcType="INTEGER" />
+    <result column="BASE_BENEFITS" property="baseBenefits" jdbcType="VARCHAR" />
+    <result column="BASE_BENEFITSNAME" property="baseBenefitsname" jdbcType="VARCHAR" />
+    <result column="MAP_ID" property="mapId" jdbcType="VARCHAR" />
+    <result column="WORK_ID" property="workId" jdbcType="VARCHAR" />
+    <result column="WORK" property="work" jdbcType="VARCHAR" />
+    <result column="JOB_TYPE_ID" property="jobTypeId" jdbcType="VARCHAR" />
+    <result column="JOB_TYPE_NAME" property="jobTypeName" jdbcType="VARCHAR" />
+    <result column="IS_EMERGENT" property="isEmergent" jdbcType="INTEGER" />
+    <result column="EMERGENT_BEGIN" property="emergentBegin" jdbcType="VARCHAR" />
+    <result column="EMERGENT_END" property="emergentEnd" jdbcType="VARCHAR" />
+    <result column="IS_RECRUIT" property="isRecruit" jdbcType="INTEGER" />
+    <result column="SUBSITE_ID" property="subsiteId" jdbcType="VARCHAR" />
+    <result column="IS_SHOW_CONTACT" property="isShowContact" jdbcType="INTEGER" />
+    <result column="IS_SHOW_PHONE" property="isShowPhone" jdbcType="INTEGER" />
+    <result column="IS_SHOW_EMAIL" property="isShowEmail" jdbcType="INTEGER" />
+    <result column="IS_SHOW_ADDRESS" property="isShowAddress" jdbcType="INTEGER" />
+    <result column="BAT_NO" property="batNo" jdbcType="VARCHAR" />
+    <result column="STICK" property="stick" jdbcType="INTEGER" />
+    <result column="HIGHLIGHT" property="highlight" jdbcType="VARCHAR" />
+    <result column="AGE_STR" property="ageStr" jdbcType="VARCHAR" />
+    <result column="BOID" property="boid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, JOB_ID, ENT_ID, ENT_NAME, DEPT_ID, DEPT_NAME, JOB_NAME, REQUIRED_NUM, CAL, CAL_AUDIT_STATUS, 
+    MIN_SALARY, MAX_SALARY, IS_NEGOTIATE, JOB_DESC, JOB_COND, BENEFITS, DEG_ID, DEG_NAME, 
+    DEG_ABOVE, EXP_ID, EXP_YEARS, EXP_ABOVE, GENDER, MIN_AGE, MAX_AGE, DRIVER_SKILL_ID, 
+    DRIVER_SKILL_LEVEL, LANG_SKILL_NAME, LANG_SKILL_ID, CONTACT, IV_ADDR, JOB_EMAIL, 
+    FAX, MOBILE, PHONE, ZIPCODE, EMAIL, WORK_TYPE_ID, WORK_TYPE_NAME, CREATE_TIME, END_DATE, 
+    PUBLISH_DATE, MODIFY_TIME, PAUSE_TIME, ARCHIVED_TIME, IS_DEL, DEL_TIME, REF_TIME, 
+    AUTO_REF_TIME, APP_TIME, CLASSIFY, AUDIT_STATUS, LOOKED, BROWSE, IS_LOCAL, IS_AUTO_REP, 
+    IS_SEND_APP, APP_EMAIL, IS_SEND_CE, CS_EMAIL, IS_SEND_SYS, SYS_EMAIL, AUTO_RECOMM, 
+    JOB_SORT, REP_LIMIT, REF_NUMS, END_REF_TIME, CE_REF_TIME, CS_REF_NUMS, COMM_NUMS, 
+    COMM_UNLOOK, RESUMES, UNLOOK_RES, DEL_APPCV_NUM, IS_ACCEPT_CVS, MEDAL_VALUE, MEDAL_BEGIN, 
+    MEDAL_END, DRAFT_STATU, ARCHIVED_STATU, BASE_BENEFITS, BASE_BENEFITSNAME, MAP_ID, 
+    WORK_ID, WORK, JOB_TYPE_ID, JOB_TYPE_NAME, IS_EMERGENT, EMERGENT_BEGIN, EMERGENT_END, 
+    IS_RECRUIT, SUBSITE_ID, IS_SHOW_CONTACT, IS_SHOW_PHONE, IS_SHOW_EMAIL, IS_SHOW_ADDRESS, 
+    BAT_NO, STICK, HIGHLIGHT, AGE_STR, BOID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from wa_ent_jobs
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wa_ent_jobs
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="model.WaEntJobs" useGeneratedKeys="true" keyProperty="id" >
+    insert into wa_ent_jobs (JOB_ID, ENT_ID, ENT_NAME, 
+      DEPT_ID, DEPT_NAME, JOB_NAME, 
+      REQUIRED_NUM, CAL, CAL_AUDIT_STATUS, 
+      MIN_SALARY, MAX_SALARY, IS_NEGOTIATE, 
+      JOB_DESC, JOB_COND, BENEFITS, 
+      DEG_ID, DEG_NAME, DEG_ABOVE, 
+      EXP_ID, EXP_YEARS, EXP_ABOVE, 
+      GENDER, MIN_AGE, MAX_AGE, 
+      DRIVER_SKILL_ID, DRIVER_SKILL_LEVEL, LANG_SKILL_NAME, 
+      LANG_SKILL_ID, CONTACT, IV_ADDR, 
+      JOB_EMAIL, FAX, MOBILE, 
+      PHONE, ZIPCODE, EMAIL, 
+      WORK_TYPE_ID, WORK_TYPE_NAME, CREATE_TIME, 
+      END_DATE, PUBLISH_DATE, MODIFY_TIME, 
+      PAUSE_TIME, ARCHIVED_TIME, IS_DEL, 
+      DEL_TIME, REF_TIME, AUTO_REF_TIME, 
+      APP_TIME, CLASSIFY, AUDIT_STATUS, 
+      LOOKED, BROWSE, IS_LOCAL, 
+      IS_AUTO_REP, IS_SEND_APP, APP_EMAIL, 
+      IS_SEND_CE, CS_EMAIL, IS_SEND_SYS, 
+      SYS_EMAIL, AUTO_RECOMM, JOB_SORT, 
+      REP_LIMIT, REF_NUMS, END_REF_TIME, 
+      CE_REF_TIME, CS_REF_NUMS, COMM_NUMS, 
+      COMM_UNLOOK, RESUMES, UNLOOK_RES, 
+      DEL_APPCV_NUM, IS_ACCEPT_CVS, MEDAL_VALUE, 
+      MEDAL_BEGIN, MEDAL_END, DRAFT_STATU, 
+      ARCHIVED_STATU, BASE_BENEFITS, BASE_BENEFITSNAME, 
+      MAP_ID, WORK_ID, WORK, 
+      JOB_TYPE_ID, JOB_TYPE_NAME, IS_EMERGENT, 
+      EMERGENT_BEGIN, EMERGENT_END, IS_RECRUIT, 
+      SUBSITE_ID, IS_SHOW_CONTACT, IS_SHOW_PHONE, 
+      IS_SHOW_EMAIL, IS_SHOW_ADDRESS, BAT_NO, 
+      STICK, HIGHLIGHT, AGE_STR, 
+      BOID)
+    values (#{jobId,jdbcType=VARCHAR}, #{entId,jdbcType=VARCHAR}, #{entName,jdbcType=VARCHAR}, 
+      #{deptId,jdbcType=VARCHAR}, #{deptName,jdbcType=VARCHAR}, #{jobName,jdbcType=VARCHAR}, 
+      #{requiredNum,jdbcType=INTEGER}, #{cal,jdbcType=VARCHAR}, #{calAuditStatus,jdbcType=INTEGER}, 
+      #{minSalary,jdbcType=INTEGER}, #{maxSalary,jdbcType=INTEGER}, #{isNegotiate,jdbcType=INTEGER}, 
+      #{jobDesc,jdbcType=VARCHAR}, #{jobCond,jdbcType=VARCHAR}, #{benefits,jdbcType=VARCHAR}, 
+      #{degId,jdbcType=INTEGER}, #{degName,jdbcType=VARCHAR}, #{degAbove,jdbcType=INTEGER}, 
+      #{expId,jdbcType=INTEGER}, #{expYears,jdbcType=VARCHAR}, #{expAbove,jdbcType=INTEGER}, 
+      #{gender,jdbcType=INTEGER}, #{minAge,jdbcType=INTEGER}, #{maxAge,jdbcType=INTEGER}, 
+      #{driverSkillId,jdbcType=INTEGER}, #{driverSkillLevel,jdbcType=VARCHAR}, #{langSkillName,jdbcType=VARCHAR}, 
+      #{langSkillId,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, #{ivAddr,jdbcType=VARCHAR}, 
+      #{jobEmail,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{workTypeId,jdbcType=INTEGER}, #{workTypeName,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{endDate,jdbcType=VARCHAR}, #{publishDate,jdbcType=VARCHAR}, #{modifyTime,jdbcType=VARCHAR}, 
+      #{pauseTime,jdbcType=VARCHAR}, #{archivedTime,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{delTime,jdbcType=VARCHAR}, #{refTime,jdbcType=VARCHAR}, #{autoRefTime,jdbcType=VARCHAR}, 
+      #{appTime,jdbcType=VARCHAR}, #{classify,jdbcType=INTEGER}, #{auditStatus,jdbcType=INTEGER}, 
+      #{looked,jdbcType=INTEGER}, #{browse,jdbcType=INTEGER}, #{isLocal,jdbcType=INTEGER}, 
+      #{isAutoRep,jdbcType=INTEGER}, #{isSendApp,jdbcType=INTEGER}, #{appEmail,jdbcType=VARCHAR}, 
+      #{isSendCe,jdbcType=INTEGER}, #{csEmail,jdbcType=VARCHAR}, #{isSendSys,jdbcType=INTEGER}, 
+      #{sysEmail,jdbcType=VARCHAR}, #{autoRecomm,jdbcType=INTEGER}, #{jobSort,jdbcType=INTEGER}, 
+      #{repLimit,jdbcType=INTEGER}, #{refNums,jdbcType=INTEGER}, #{endRefTime,jdbcType=VARCHAR}, 
+      #{ceRefTime,jdbcType=VARCHAR}, #{csRefNums,jdbcType=INTEGER}, #{commNums,jdbcType=INTEGER}, 
+      #{commUnlook,jdbcType=INTEGER}, #{resumes,jdbcType=INTEGER}, #{unlookRes,jdbcType=INTEGER}, 
+      #{delAppcvNum,jdbcType=INTEGER}, #{isAcceptCvs,jdbcType=INTEGER}, #{medalValue,jdbcType=INTEGER}, 
+      #{medalBegin,jdbcType=VARCHAR}, #{medalEnd,jdbcType=VARCHAR}, #{draftStatu,jdbcType=INTEGER}, 
+      #{archivedStatu,jdbcType=INTEGER}, #{baseBenefits,jdbcType=VARCHAR}, #{baseBenefitsname,jdbcType=VARCHAR}, 
+      #{mapId,jdbcType=VARCHAR}, #{workId,jdbcType=VARCHAR}, #{work,jdbcType=VARCHAR}, 
+      #{jobTypeId,jdbcType=VARCHAR}, #{jobTypeName,jdbcType=VARCHAR}, #{isEmergent,jdbcType=INTEGER}, 
+      #{emergentBegin,jdbcType=VARCHAR}, #{emergentEnd,jdbcType=VARCHAR}, #{isRecruit,jdbcType=INTEGER}, 
+      #{subsiteId,jdbcType=VARCHAR}, #{isShowContact,jdbcType=INTEGER}, #{isShowPhone,jdbcType=INTEGER}, 
+      #{isShowEmail,jdbcType=INTEGER}, #{isShowAddress,jdbcType=INTEGER}, #{batNo,jdbcType=VARCHAR}, 
+      #{stick,jdbcType=INTEGER}, #{highlight,jdbcType=VARCHAR}, #{ageStr,jdbcType=VARCHAR}, 
+      #{boid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.WaEntJobs" useGeneratedKeys="true" keyProperty="id" >
+    insert into wa_ent_jobs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jobId != null" >
+        JOB_ID,
+      </if>
+      <if test="entId != null" >
+        ENT_ID,
+      </if>
+      <if test="entName != null" >
+        ENT_NAME,
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID,
+      </if>
+      <if test="deptName != null" >
+        DEPT_NAME,
+      </if>
+      <if test="jobName != null" >
+        JOB_NAME,
+      </if>
+      <if test="requiredNum != null" >
+        REQUIRED_NUM,
+      </if>
+      <if test="cal != null" >
+        CAL,
+      </if>
+      <if test="calAuditStatus != null" >
+        CAL_AUDIT_STATUS,
+      </if>
+      <if test="minSalary != null" >
+        MIN_SALARY,
+      </if>
+      <if test="maxSalary != null" >
+        MAX_SALARY,
+      </if>
+      <if test="isNegotiate != null" >
+        IS_NEGOTIATE,
+      </if>
+      <if test="jobDesc != null" >
+        JOB_DESC,
+      </if>
+      <if test="jobCond != null" >
+        JOB_COND,
+      </if>
+      <if test="benefits != null" >
+        BENEFITS,
+      </if>
+      <if test="degId != null" >
+        DEG_ID,
+      </if>
+      <if test="degName != null" >
+        DEG_NAME,
+      </if>
+      <if test="degAbove != null" >
+        DEG_ABOVE,
+      </if>
+      <if test="expId != null" >
+        EXP_ID,
+      </if>
+      <if test="expYears != null" >
+        EXP_YEARS,
+      </if>
+      <if test="expAbove != null" >
+        EXP_ABOVE,
+      </if>
+      <if test="gender != null" >
+        GENDER,
+      </if>
+      <if test="minAge != null" >
+        MIN_AGE,
+      </if>
+      <if test="maxAge != null" >
+        MAX_AGE,
+      </if>
+      <if test="driverSkillId != null" >
+        DRIVER_SKILL_ID,
+      </if>
+      <if test="driverSkillLevel != null" >
+        DRIVER_SKILL_LEVEL,
+      </if>
+      <if test="langSkillName != null" >
+        LANG_SKILL_NAME,
+      </if>
+      <if test="langSkillId != null" >
+        LANG_SKILL_ID,
+      </if>
+      <if test="contact != null" >
+        CONTACT,
+      </if>
+      <if test="ivAddr != null" >
+        IV_ADDR,
+      </if>
+      <if test="jobEmail != null" >
+        JOB_EMAIL,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="mobile != null" >
+        MOBILE,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="workTypeId != null" >
+        WORK_TYPE_ID,
+      </if>
+      <if test="workTypeName != null" >
+        WORK_TYPE_NAME,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="endDate != null" >
+        END_DATE,
+      </if>
+      <if test="publishDate != null" >
+        PUBLISH_DATE,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+      <if test="pauseTime != null" >
+        PAUSE_TIME,
+      </if>
+      <if test="archivedTime != null" >
+        ARCHIVED_TIME,
+      </if>
+      <if test="isDel != null" >
+        IS_DEL,
+      </if>
+      <if test="delTime != null" >
+        DEL_TIME,
+      </if>
+      <if test="refTime != null" >
+        REF_TIME,
+      </if>
+      <if test="autoRefTime != null" >
+        AUTO_REF_TIME,
+      </if>
+      <if test="appTime != null" >
+        APP_TIME,
+      </if>
+      <if test="classify != null" >
+        CLASSIFY,
+      </if>
+      <if test="auditStatus != null" >
+        AUDIT_STATUS,
+      </if>
+      <if test="looked != null" >
+        LOOKED,
+      </if>
+      <if test="browse != null" >
+        BROWSE,
+      </if>
+      <if test="isLocal != null" >
+        IS_LOCAL,
+      </if>
+      <if test="isAutoRep != null" >
+        IS_AUTO_REP,
+      </if>
+      <if test="isSendApp != null" >
+        IS_SEND_APP,
+      </if>
+      <if test="appEmail != null" >
+        APP_EMAIL,
+      </if>
+      <if test="isSendCe != null" >
+        IS_SEND_CE,
+      </if>
+      <if test="csEmail != null" >
+        CS_EMAIL,
+      </if>
+      <if test="isSendSys != null" >
+        IS_SEND_SYS,
+      </if>
+      <if test="sysEmail != null" >
+        SYS_EMAIL,
+      </if>
+      <if test="autoRecomm != null" >
+        AUTO_RECOMM,
+      </if>
+      <if test="jobSort != null" >
+        JOB_SORT,
+      </if>
+      <if test="repLimit != null" >
+        REP_LIMIT,
+      </if>
+      <if test="refNums != null" >
+        REF_NUMS,
+      </if>
+      <if test="endRefTime != null" >
+        END_REF_TIME,
+      </if>
+      <if test="ceRefTime != null" >
+        CE_REF_TIME,
+      </if>
+      <if test="csRefNums != null" >
+        CS_REF_NUMS,
+      </if>
+      <if test="commNums != null" >
+        COMM_NUMS,
+      </if>
+      <if test="commUnlook != null" >
+        COMM_UNLOOK,
+      </if>
+      <if test="resumes != null" >
+        RESUMES,
+      </if>
+      <if test="unlookRes != null" >
+        UNLOOK_RES,
+      </if>
+      <if test="delAppcvNum != null" >
+        DEL_APPCV_NUM,
+      </if>
+      <if test="isAcceptCvs != null" >
+        IS_ACCEPT_CVS,
+      </if>
+      <if test="medalValue != null" >
+        MEDAL_VALUE,
+      </if>
+      <if test="medalBegin != null" >
+        MEDAL_BEGIN,
+      </if>
+      <if test="medalEnd != null" >
+        MEDAL_END,
+      </if>
+      <if test="draftStatu != null" >
+        DRAFT_STATU,
+      </if>
+      <if test="archivedStatu != null" >
+        ARCHIVED_STATU,
+      </if>
+      <if test="baseBenefits != null" >
+        BASE_BENEFITS,
+      </if>
+      <if test="baseBenefitsname != null" >
+        BASE_BENEFITSNAME,
+      </if>
+      <if test="mapId != null" >
+        MAP_ID,
+      </if>
+      <if test="workId != null" >
+        WORK_ID,
+      </if>
+      <if test="work != null" >
+        WORK,
+      </if>
+      <if test="jobTypeId != null" >
+        JOB_TYPE_ID,
+      </if>
+      <if test="jobTypeName != null" >
+        JOB_TYPE_NAME,
+      </if>
+      <if test="isEmergent != null" >
+        IS_EMERGENT,
+      </if>
+      <if test="emergentBegin != null" >
+        EMERGENT_BEGIN,
+      </if>
+      <if test="emergentEnd != null" >
+        EMERGENT_END,
+      </if>
+      <if test="isRecruit != null" >
+        IS_RECRUIT,
+      </if>
+      <if test="subsiteId != null" >
+        SUBSITE_ID,
+      </if>
+      <if test="isShowContact != null" >
+        IS_SHOW_CONTACT,
+      </if>
+      <if test="isShowPhone != null" >
+        IS_SHOW_PHONE,
+      </if>
+      <if test="isShowEmail != null" >
+        IS_SHOW_EMAIL,
+      </if>
+      <if test="isShowAddress != null" >
+        IS_SHOW_ADDRESS,
+      </if>
+      <if test="batNo != null" >
+        BAT_NO,
+      </if>
+      <if test="stick != null" >
+        STICK,
+      </if>
+      <if test="highlight != null" >
+        HIGHLIGHT,
+      </if>
+      <if test="ageStr != null" >
+        AGE_STR,
+      </if>
+      <if test="boid != null" >
+        BOID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jobId != null" >
+        #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="entId != null" >
+        #{entId,jdbcType=VARCHAR},
+      </if>
+      <if test="entName != null" >
+        #{entName,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null" >
+        #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobName != null" >
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="requiredNum != null" >
+        #{requiredNum,jdbcType=INTEGER},
+      </if>
+      <if test="cal != null" >
+        #{cal,jdbcType=VARCHAR},
+      </if>
+      <if test="calAuditStatus != null" >
+        #{calAuditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="minSalary != null" >
+        #{minSalary,jdbcType=INTEGER},
+      </if>
+      <if test="maxSalary != null" >
+        #{maxSalary,jdbcType=INTEGER},
+      </if>
+      <if test="isNegotiate != null" >
+        #{isNegotiate,jdbcType=INTEGER},
+      </if>
+      <if test="jobDesc != null" >
+        #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCond != null" >
+        #{jobCond,jdbcType=VARCHAR},
+      </if>
+      <if test="benefits != null" >
+        #{benefits,jdbcType=VARCHAR},
+      </if>
+      <if test="degId != null" >
+        #{degId,jdbcType=INTEGER},
+      </if>
+      <if test="degName != null" >
+        #{degName,jdbcType=VARCHAR},
+      </if>
+      <if test="degAbove != null" >
+        #{degAbove,jdbcType=INTEGER},
+      </if>
+      <if test="expId != null" >
+        #{expId,jdbcType=INTEGER},
+      </if>
+      <if test="expYears != null" >
+        #{expYears,jdbcType=VARCHAR},
+      </if>
+      <if test="expAbove != null" >
+        #{expAbove,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="minAge != null" >
+        #{minAge,jdbcType=INTEGER},
+      </if>
+      <if test="maxAge != null" >
+        #{maxAge,jdbcType=INTEGER},
+      </if>
+      <if test="driverSkillId != null" >
+        #{driverSkillId,jdbcType=INTEGER},
+      </if>
+      <if test="driverSkillLevel != null" >
+        #{driverSkillLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="langSkillName != null" >
+        #{langSkillName,jdbcType=VARCHAR},
+      </if>
+      <if test="langSkillId != null" >
+        #{langSkillId,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="ivAddr != null" >
+        #{ivAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="jobEmail != null" >
+        #{jobEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="workTypeId != null" >
+        #{workTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="workTypeName != null" >
+        #{workTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publishDate != null" >
+        #{publishDate,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pauseTime != null" >
+        #{pauseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="archivedTime != null" >
+        #{archivedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="delTime != null" >
+        #{delTime,jdbcType=VARCHAR},
+      </if>
+      <if test="refTime != null" >
+        #{refTime,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRefTime != null" >
+        #{autoRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="appTime != null" >
+        #{appTime,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="auditStatus != null" >
+        #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="looked != null" >
+        #{looked,jdbcType=INTEGER},
+      </if>
+      <if test="browse != null" >
+        #{browse,jdbcType=INTEGER},
+      </if>
+      <if test="isLocal != null" >
+        #{isLocal,jdbcType=INTEGER},
+      </if>
+      <if test="isAutoRep != null" >
+        #{isAutoRep,jdbcType=INTEGER},
+      </if>
+      <if test="isSendApp != null" >
+        #{isSendApp,jdbcType=INTEGER},
+      </if>
+      <if test="appEmail != null" >
+        #{appEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="isSendCe != null" >
+        #{isSendCe,jdbcType=INTEGER},
+      </if>
+      <if test="csEmail != null" >
+        #{csEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="isSendSys != null" >
+        #{isSendSys,jdbcType=INTEGER},
+      </if>
+      <if test="sysEmail != null" >
+        #{sysEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRecomm != null" >
+        #{autoRecomm,jdbcType=INTEGER},
+      </if>
+      <if test="jobSort != null" >
+        #{jobSort,jdbcType=INTEGER},
+      </if>
+      <if test="repLimit != null" >
+        #{repLimit,jdbcType=INTEGER},
+      </if>
+      <if test="refNums != null" >
+        #{refNums,jdbcType=INTEGER},
+      </if>
+      <if test="endRefTime != null" >
+        #{endRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ceRefTime != null" >
+        #{ceRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="csRefNums != null" >
+        #{csRefNums,jdbcType=INTEGER},
+      </if>
+      <if test="commNums != null" >
+        #{commNums,jdbcType=INTEGER},
+      </if>
+      <if test="commUnlook != null" >
+        #{commUnlook,jdbcType=INTEGER},
+      </if>
+      <if test="resumes != null" >
+        #{resumes,jdbcType=INTEGER},
+      </if>
+      <if test="unlookRes != null" >
+        #{unlookRes,jdbcType=INTEGER},
+      </if>
+      <if test="delAppcvNum != null" >
+        #{delAppcvNum,jdbcType=INTEGER},
+      </if>
+      <if test="isAcceptCvs != null" >
+        #{isAcceptCvs,jdbcType=INTEGER},
+      </if>
+      <if test="medalValue != null" >
+        #{medalValue,jdbcType=INTEGER},
+      </if>
+      <if test="medalBegin != null" >
+        #{medalBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="medalEnd != null" >
+        #{medalEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="draftStatu != null" >
+        #{draftStatu,jdbcType=INTEGER},
+      </if>
+      <if test="archivedStatu != null" >
+        #{archivedStatu,jdbcType=INTEGER},
+      </if>
+      <if test="baseBenefits != null" >
+        #{baseBenefits,jdbcType=VARCHAR},
+      </if>
+      <if test="baseBenefitsname != null" >
+        #{baseBenefitsname,jdbcType=VARCHAR},
+      </if>
+      <if test="mapId != null" >
+        #{mapId,jdbcType=VARCHAR},
+      </if>
+      <if test="workId != null" >
+        #{workId,jdbcType=VARCHAR},
+      </if>
+      <if test="work != null" >
+        #{work,jdbcType=VARCHAR},
+      </if>
+      <if test="jobTypeId != null" >
+        #{jobTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="jobTypeName != null" >
+        #{jobTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isEmergent != null" >
+        #{isEmergent,jdbcType=INTEGER},
+      </if>
+      <if test="emergentBegin != null" >
+        #{emergentBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="emergentEnd != null" >
+        #{emergentEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecruit != null" >
+        #{isRecruit,jdbcType=INTEGER},
+      </if>
+      <if test="subsiteId != null" >
+        #{subsiteId,jdbcType=VARCHAR},
+      </if>
+      <if test="isShowContact != null" >
+        #{isShowContact,jdbcType=INTEGER},
+      </if>
+      <if test="isShowPhone != null" >
+        #{isShowPhone,jdbcType=INTEGER},
+      </if>
+      <if test="isShowEmail != null" >
+        #{isShowEmail,jdbcType=INTEGER},
+      </if>
+      <if test="isShowAddress != null" >
+        #{isShowAddress,jdbcType=INTEGER},
+      </if>
+      <if test="batNo != null" >
+        #{batNo,jdbcType=VARCHAR},
+      </if>
+      <if test="stick != null" >
+        #{stick,jdbcType=INTEGER},
+      </if>
+      <if test="highlight != null" >
+        #{highlight,jdbcType=VARCHAR},
+      </if>
+      <if test="ageStr != null" >
+        #{ageStr,jdbcType=VARCHAR},
+      </if>
+      <if test="boid != null" >
+        #{boid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.WaEntJobs" >
+    update wa_ent_jobs
+    <set >
+      <if test="jobId != null" >
+        JOB_ID = #{jobId,jdbcType=VARCHAR},
+      </if>
+      <if test="entId != null" >
+        ENT_ID = #{entId,jdbcType=VARCHAR},
+      </if>
+      <if test="entName != null" >
+        ENT_NAME = #{entName,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null" >
+        DEPT_ID = #{deptId,jdbcType=VARCHAR},
+      </if>
+      <if test="deptName != null" >
+        DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobName != null" >
+        JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="requiredNum != null" >
+        REQUIRED_NUM = #{requiredNum,jdbcType=INTEGER},
+      </if>
+      <if test="cal != null" >
+        CAL = #{cal,jdbcType=VARCHAR},
+      </if>
+      <if test="calAuditStatus != null" >
+        CAL_AUDIT_STATUS = #{calAuditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="minSalary != null" >
+        MIN_SALARY = #{minSalary,jdbcType=INTEGER},
+      </if>
+      <if test="maxSalary != null" >
+        MAX_SALARY = #{maxSalary,jdbcType=INTEGER},
+      </if>
+      <if test="isNegotiate != null" >
+        IS_NEGOTIATE = #{isNegotiate,jdbcType=INTEGER},
+      </if>
+      <if test="jobDesc != null" >
+        JOB_DESC = #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="jobCond != null" >
+        JOB_COND = #{jobCond,jdbcType=VARCHAR},
+      </if>
+      <if test="benefits != null" >
+        BENEFITS = #{benefits,jdbcType=VARCHAR},
+      </if>
+      <if test="degId != null" >
+        DEG_ID = #{degId,jdbcType=INTEGER},
+      </if>
+      <if test="degName != null" >
+        DEG_NAME = #{degName,jdbcType=VARCHAR},
+      </if>
+      <if test="degAbove != null" >
+        DEG_ABOVE = #{degAbove,jdbcType=INTEGER},
+      </if>
+      <if test="expId != null" >
+        EXP_ID = #{expId,jdbcType=INTEGER},
+      </if>
+      <if test="expYears != null" >
+        EXP_YEARS = #{expYears,jdbcType=VARCHAR},
+      </if>
+      <if test="expAbove != null" >
+        EXP_ABOVE = #{expAbove,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null" >
+        GENDER = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="minAge != null" >
+        MIN_AGE = #{minAge,jdbcType=INTEGER},
+      </if>
+      <if test="maxAge != null" >
+        MAX_AGE = #{maxAge,jdbcType=INTEGER},
+      </if>
+      <if test="driverSkillId != null" >
+        DRIVER_SKILL_ID = #{driverSkillId,jdbcType=INTEGER},
+      </if>
+      <if test="driverSkillLevel != null" >
+        DRIVER_SKILL_LEVEL = #{driverSkillLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="langSkillName != null" >
+        LANG_SKILL_NAME = #{langSkillName,jdbcType=VARCHAR},
+      </if>
+      <if test="langSkillId != null" >
+        LANG_SKILL_ID = #{langSkillId,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null" >
+        CONTACT = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="ivAddr != null" >
+        IV_ADDR = #{ivAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="jobEmail != null" >
+        JOB_EMAIL = #{jobEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        MOBILE = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null" >
+        ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="workTypeId != null" >
+        WORK_TYPE_ID = #{workTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="workTypeName != null" >
+        WORK_TYPE_NAME = #{workTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null" >
+        END_DATE = #{endDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publishDate != null" >
+        PUBLISH_DATE = #{publishDate,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pauseTime != null" >
+        PAUSE_TIME = #{pauseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="archivedTime != null" >
+        ARCHIVED_TIME = #{archivedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        IS_DEL = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="delTime != null" >
+        DEL_TIME = #{delTime,jdbcType=VARCHAR},
+      </if>
+      <if test="refTime != null" >
+        REF_TIME = #{refTime,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRefTime != null" >
+        AUTO_REF_TIME = #{autoRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="appTime != null" >
+        APP_TIME = #{appTime,jdbcType=VARCHAR},
+      </if>
+      <if test="classify != null" >
+        CLASSIFY = #{classify,jdbcType=INTEGER},
+      </if>
+      <if test="auditStatus != null" >
+        AUDIT_STATUS = #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="looked != null" >
+        LOOKED = #{looked,jdbcType=INTEGER},
+      </if>
+      <if test="browse != null" >
+        BROWSE = #{browse,jdbcType=INTEGER},
+      </if>
+      <if test="isLocal != null" >
+        IS_LOCAL = #{isLocal,jdbcType=INTEGER},
+      </if>
+      <if test="isAutoRep != null" >
+        IS_AUTO_REP = #{isAutoRep,jdbcType=INTEGER},
+      </if>
+      <if test="isSendApp != null" >
+        IS_SEND_APP = #{isSendApp,jdbcType=INTEGER},
+      </if>
+      <if test="appEmail != null" >
+        APP_EMAIL = #{appEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="isSendCe != null" >
+        IS_SEND_CE = #{isSendCe,jdbcType=INTEGER},
+      </if>
+      <if test="csEmail != null" >
+        CS_EMAIL = #{csEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="isSendSys != null" >
+        IS_SEND_SYS = #{isSendSys,jdbcType=INTEGER},
+      </if>
+      <if test="sysEmail != null" >
+        SYS_EMAIL = #{sysEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRecomm != null" >
+        AUTO_RECOMM = #{autoRecomm,jdbcType=INTEGER},
+      </if>
+      <if test="jobSort != null" >
+        JOB_SORT = #{jobSort,jdbcType=INTEGER},
+      </if>
+      <if test="repLimit != null" >
+        REP_LIMIT = #{repLimit,jdbcType=INTEGER},
+      </if>
+      <if test="refNums != null" >
+        REF_NUMS = #{refNums,jdbcType=INTEGER},
+      </if>
+      <if test="endRefTime != null" >
+        END_REF_TIME = #{endRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ceRefTime != null" >
+        CE_REF_TIME = #{ceRefTime,jdbcType=VARCHAR},
+      </if>
+      <if test="csRefNums != null" >
+        CS_REF_NUMS = #{csRefNums,jdbcType=INTEGER},
+      </if>
+      <if test="commNums != null" >
+        COMM_NUMS = #{commNums,jdbcType=INTEGER},
+      </if>
+      <if test="commUnlook != null" >
+        COMM_UNLOOK = #{commUnlook,jdbcType=INTEGER},
+      </if>
+      <if test="resumes != null" >
+        RESUMES = #{resumes,jdbcType=INTEGER},
+      </if>
+      <if test="unlookRes != null" >
+        UNLOOK_RES = #{unlookRes,jdbcType=INTEGER},
+      </if>
+      <if test="delAppcvNum != null" >
+        DEL_APPCV_NUM = #{delAppcvNum,jdbcType=INTEGER},
+      </if>
+      <if test="isAcceptCvs != null" >
+        IS_ACCEPT_CVS = #{isAcceptCvs,jdbcType=INTEGER},
+      </if>
+      <if test="medalValue != null" >
+        MEDAL_VALUE = #{medalValue,jdbcType=INTEGER},
+      </if>
+      <if test="medalBegin != null" >
+        MEDAL_BEGIN = #{medalBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="medalEnd != null" >
+        MEDAL_END = #{medalEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="draftStatu != null" >
+        DRAFT_STATU = #{draftStatu,jdbcType=INTEGER},
+      </if>
+      <if test="archivedStatu != null" >
+        ARCHIVED_STATU = #{archivedStatu,jdbcType=INTEGER},
+      </if>
+      <if test="baseBenefits != null" >
+        BASE_BENEFITS = #{baseBenefits,jdbcType=VARCHAR},
+      </if>
+      <if test="baseBenefitsname != null" >
+        BASE_BENEFITSNAME = #{baseBenefitsname,jdbcType=VARCHAR},
+      </if>
+      <if test="mapId != null" >
+        MAP_ID = #{mapId,jdbcType=VARCHAR},
+      </if>
+      <if test="workId != null" >
+        WORK_ID = #{workId,jdbcType=VARCHAR},
+      </if>
+      <if test="work != null" >
+        WORK = #{work,jdbcType=VARCHAR},
+      </if>
+      <if test="jobTypeId != null" >
+        JOB_TYPE_ID = #{jobTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="jobTypeName != null" >
+        JOB_TYPE_NAME = #{jobTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isEmergent != null" >
+        IS_EMERGENT = #{isEmergent,jdbcType=INTEGER},
+      </if>
+      <if test="emergentBegin != null" >
+        EMERGENT_BEGIN = #{emergentBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="emergentEnd != null" >
+        EMERGENT_END = #{emergentEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecruit != null" >
+        IS_RECRUIT = #{isRecruit,jdbcType=INTEGER},
+      </if>
+      <if test="subsiteId != null" >
+        SUBSITE_ID = #{subsiteId,jdbcType=VARCHAR},
+      </if>
+      <if test="isShowContact != null" >
+        IS_SHOW_CONTACT = #{isShowContact,jdbcType=INTEGER},
+      </if>
+      <if test="isShowPhone != null" >
+        IS_SHOW_PHONE = #{isShowPhone,jdbcType=INTEGER},
+      </if>
+      <if test="isShowEmail != null" >
+        IS_SHOW_EMAIL = #{isShowEmail,jdbcType=INTEGER},
+      </if>
+      <if test="isShowAddress != null" >
+        IS_SHOW_ADDRESS = #{isShowAddress,jdbcType=INTEGER},
+      </if>
+      <if test="batNo != null" >
+        BAT_NO = #{batNo,jdbcType=VARCHAR},
+      </if>
+      <if test="stick != null" >
+        STICK = #{stick,jdbcType=INTEGER},
+      </if>
+      <if test="highlight != null" >
+        HIGHLIGHT = #{highlight,jdbcType=VARCHAR},
+      </if>
+      <if test="ageStr != null" >
+        AGE_STR = #{ageStr,jdbcType=VARCHAR},
+      </if>
+      <if test="boid != null" >
+        BOID = #{boid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.WaEntJobs" >
+    update wa_ent_jobs
+    set JOB_ID = #{jobId,jdbcType=VARCHAR},
+      ENT_ID = #{entId,jdbcType=VARCHAR},
+      ENT_NAME = #{entName,jdbcType=VARCHAR},
+      DEPT_ID = #{deptId,jdbcType=VARCHAR},
+      DEPT_NAME = #{deptName,jdbcType=VARCHAR},
+      JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      REQUIRED_NUM = #{requiredNum,jdbcType=INTEGER},
+      CAL = #{cal,jdbcType=VARCHAR},
+      CAL_AUDIT_STATUS = #{calAuditStatus,jdbcType=INTEGER},
+      MIN_SALARY = #{minSalary,jdbcType=INTEGER},
+      MAX_SALARY = #{maxSalary,jdbcType=INTEGER},
+      IS_NEGOTIATE = #{isNegotiate,jdbcType=INTEGER},
+      JOB_DESC = #{jobDesc,jdbcType=VARCHAR},
+      JOB_COND = #{jobCond,jdbcType=VARCHAR},
+      BENEFITS = #{benefits,jdbcType=VARCHAR},
+      DEG_ID = #{degId,jdbcType=INTEGER},
+      DEG_NAME = #{degName,jdbcType=VARCHAR},
+      DEG_ABOVE = #{degAbove,jdbcType=INTEGER},
+      EXP_ID = #{expId,jdbcType=INTEGER},
+      EXP_YEARS = #{expYears,jdbcType=VARCHAR},
+      EXP_ABOVE = #{expAbove,jdbcType=INTEGER},
+      GENDER = #{gender,jdbcType=INTEGER},
+      MIN_AGE = #{minAge,jdbcType=INTEGER},
+      MAX_AGE = #{maxAge,jdbcType=INTEGER},
+      DRIVER_SKILL_ID = #{driverSkillId,jdbcType=INTEGER},
+      DRIVER_SKILL_LEVEL = #{driverSkillLevel,jdbcType=VARCHAR},
+      LANG_SKILL_NAME = #{langSkillName,jdbcType=VARCHAR},
+      LANG_SKILL_ID = #{langSkillId,jdbcType=VARCHAR},
+      CONTACT = #{contact,jdbcType=VARCHAR},
+      IV_ADDR = #{ivAddr,jdbcType=VARCHAR},
+      JOB_EMAIL = #{jobEmail,jdbcType=VARCHAR},
+      FAX = #{fax,jdbcType=VARCHAR},
+      MOBILE = #{mobile,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      ZIPCODE = #{zipcode,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      WORK_TYPE_ID = #{workTypeId,jdbcType=INTEGER},
+      WORK_TYPE_NAME = #{workTypeName,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=VARCHAR},
+      END_DATE = #{endDate,jdbcType=VARCHAR},
+      PUBLISH_DATE = #{publishDate,jdbcType=VARCHAR},
+      MODIFY_TIME = #{modifyTime,jdbcType=VARCHAR},
+      PAUSE_TIME = #{pauseTime,jdbcType=VARCHAR},
+      ARCHIVED_TIME = #{archivedTime,jdbcType=VARCHAR},
+      IS_DEL = #{isDel,jdbcType=INTEGER},
+      DEL_TIME = #{delTime,jdbcType=VARCHAR},
+      REF_TIME = #{refTime,jdbcType=VARCHAR},
+      AUTO_REF_TIME = #{autoRefTime,jdbcType=VARCHAR},
+      APP_TIME = #{appTime,jdbcType=VARCHAR},
+      CLASSIFY = #{classify,jdbcType=INTEGER},
+      AUDIT_STATUS = #{auditStatus,jdbcType=INTEGER},
+      LOOKED = #{looked,jdbcType=INTEGER},
+      BROWSE = #{browse,jdbcType=INTEGER},
+      IS_LOCAL = #{isLocal,jdbcType=INTEGER},
+      IS_AUTO_REP = #{isAutoRep,jdbcType=INTEGER},
+      IS_SEND_APP = #{isSendApp,jdbcType=INTEGER},
+      APP_EMAIL = #{appEmail,jdbcType=VARCHAR},
+      IS_SEND_CE = #{isSendCe,jdbcType=INTEGER},
+      CS_EMAIL = #{csEmail,jdbcType=VARCHAR},
+      IS_SEND_SYS = #{isSendSys,jdbcType=INTEGER},
+      SYS_EMAIL = #{sysEmail,jdbcType=VARCHAR},
+      AUTO_RECOMM = #{autoRecomm,jdbcType=INTEGER},
+      JOB_SORT = #{jobSort,jdbcType=INTEGER},
+      REP_LIMIT = #{repLimit,jdbcType=INTEGER},
+      REF_NUMS = #{refNums,jdbcType=INTEGER},
+      END_REF_TIME = #{endRefTime,jdbcType=VARCHAR},
+      CE_REF_TIME = #{ceRefTime,jdbcType=VARCHAR},
+      CS_REF_NUMS = #{csRefNums,jdbcType=INTEGER},
+      COMM_NUMS = #{commNums,jdbcType=INTEGER},
+      COMM_UNLOOK = #{commUnlook,jdbcType=INTEGER},
+      RESUMES = #{resumes,jdbcType=INTEGER},
+      UNLOOK_RES = #{unlookRes,jdbcType=INTEGER},
+      DEL_APPCV_NUM = #{delAppcvNum,jdbcType=INTEGER},
+      IS_ACCEPT_CVS = #{isAcceptCvs,jdbcType=INTEGER},
+      MEDAL_VALUE = #{medalValue,jdbcType=INTEGER},
+      MEDAL_BEGIN = #{medalBegin,jdbcType=VARCHAR},
+      MEDAL_END = #{medalEnd,jdbcType=VARCHAR},
+      DRAFT_STATU = #{draftStatu,jdbcType=INTEGER},
+      ARCHIVED_STATU = #{archivedStatu,jdbcType=INTEGER},
+      BASE_BENEFITS = #{baseBenefits,jdbcType=VARCHAR},
+      BASE_BENEFITSNAME = #{baseBenefitsname,jdbcType=VARCHAR},
+      MAP_ID = #{mapId,jdbcType=VARCHAR},
+      WORK_ID = #{workId,jdbcType=VARCHAR},
+      WORK = #{work,jdbcType=VARCHAR},
+      JOB_TYPE_ID = #{jobTypeId,jdbcType=VARCHAR},
+      JOB_TYPE_NAME = #{jobTypeName,jdbcType=VARCHAR},
+      IS_EMERGENT = #{isEmergent,jdbcType=INTEGER},
+      EMERGENT_BEGIN = #{emergentBegin,jdbcType=VARCHAR},
+      EMERGENT_END = #{emergentEnd,jdbcType=VARCHAR},
+      IS_RECRUIT = #{isRecruit,jdbcType=INTEGER},
+      SUBSITE_ID = #{subsiteId,jdbcType=VARCHAR},
+      IS_SHOW_CONTACT = #{isShowContact,jdbcType=INTEGER},
+      IS_SHOW_PHONE = #{isShowPhone,jdbcType=INTEGER},
+      IS_SHOW_EMAIL = #{isShowEmail,jdbcType=INTEGER},
+      IS_SHOW_ADDRESS = #{isShowAddress,jdbcType=INTEGER},
+      BAT_NO = #{batNo,jdbcType=VARCHAR},
+      STICK = #{stick,jdbcType=INTEGER},
+      HIGHLIGHT = #{highlight,jdbcType=VARCHAR},
+      AGE_STR = #{ageStr,jdbcType=VARCHAR},
+      BOID = #{boid,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
