@@ -6,9 +6,6 @@
     <!-- 数据库驱动包位置 -->
     <classPathEntry location="D:\1.Java\generator\mysql-connector-java-5.1.6-bin.jar"/>
 
-    <commentGenerator><property name="javaFileEncoding" value="UTF-8"/></commentGenerator>
-     
-
     <context id="DB2Tables" targetRuntime="MyBatis3">
 
         <commentGenerator>
